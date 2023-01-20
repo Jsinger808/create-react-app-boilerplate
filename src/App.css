@@ -1,0 +1,164 @@
+
+
+/* #Button-Boy {
+  background-color: aqua;
+}
+
+#Button-Girl {
+  background-color:fuchsia;
+} */
+/* var(color-secondary) 0%,
+var(color-primary) 8%,
+var(color-primary) 92%,
+var(color-secondary) 100% */
+:root {
+  --color-primary: hsl(345deg 100% 47%);
+  --color-secondary: hsl(340deg 100% 16%);
+  --color-primary2: rgb(10, 153, 197);
+  --color-secondary2: rgb(7, 8, 97);
+}
+
+.info { font-size : 30px;
+  padding : 0;
+  margin : 0;
+  line-height : 2em;}
+
+
+
+.center {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.pushable {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+}
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+.edge1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    var(--color-secondary) 0%,
+    var(--color-primary) 8%,
+    var(--color-primary) 92%,
+    var(--color-secondary) 100%
+  );
+}
+.edge2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    var(--color-secondary2) 0%,
+    var(--color-primary2) 8%,
+    var(--color-primary2) 92%,
+    var(--color-secondary2) 100%
+  );
+}
+.front1 {
+  display: block;
+  position: relative;
+  padding: 120px 240px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  color: white;
+  background: var(--color-primary);
+  will-change: transform;
+  transform: translateY(-4px);
+  font-size: 1000%;
+  font-family: Arial, Helvetica, sans-serif;
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.front2 {
+  display: block;
+  position: relative;
+  padding: 120px 240px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  color: white;
+  background: var(--color-primary2);
+  will-change: transform;
+  transform: translateY(-4px);
+  font-size: 1000%;
+  font-family: Arial, Helvetica, sans-serif;
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.pushable:hover {
+  filter: brightness(110%);
+}
+.pushable:hover .front1 {
+  transform: translateY(-6px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+.pushable:active .front1 {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.pushable:hover .front2 {
+  transform: translateY(-6px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+.pushable:active .front2 {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.pushable:hover .shadow {
+  transform: translateY(4px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+.pushable:active .shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+.pushable:focus:not(:focus-visible) {
+  outline: none;
+}
